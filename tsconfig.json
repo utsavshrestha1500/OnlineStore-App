@@ -19,12 +19,14 @@
     },
     "plugins": [
       {
-        "name": "next"
+        "name": "typescript-styled-plugin"
       }
     ],
     "strictNullChecks": true,
-    "target": "ES2017"
+    "target": "esnext",
+    "skipDefaultLibCheck": true, // Added this to skip type checking of declaration files in node_modules
+   
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", ".next"] // Excluding the .next folder from TypeScript checking
 }
