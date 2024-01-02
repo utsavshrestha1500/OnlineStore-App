@@ -3,11 +3,40 @@ import { groq } from "next-sanity"
 import { SanityProduct } from "@/config/inventory"
 import { ProductGallery } from "@/components/product-gallery"
 import { ProductInfo } from "@/components/product-info"
+import { Metadata } from "next"
+
 
 interface Props {
 params: {
   slug: string
 }
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const product = await client.fetch<SanityProduct>(
+    groq`*[_type == "product" && slug.current == "${params.slug}"][0] {
+      name,
+      description
+    }`
+  );
+
+  if (!product) {
+    return {
+      title: "Not Found",
+      description: "The page is not found",
+    };
+  }
+
+  return {
+    title: product.name,
+    description: product.description,
+    alternates: {
+      canonical: `/product/${params.slug}`,
+      languages: {
+        "en-CA": `en-CA/product/${params.slug}`,
+      },
+    },
+  };
 }
 
 export default async function Page({ params } : Props) {

@@ -2,11 +2,19 @@ import Link from "next/link"
 
 import { stripe } from "@/lib/stripe"
 import { CheckoutSession } from "@/components/checkout-session"
+import { Metadata } from "next"
 
 interface Props {
   searchParams: {
     session_id?: string
   }
+}
+
+export const metadata: Metadata = {
+  title: {
+    absolute: "Success"
+  
+  },
 }
 
 export default async function Page({ searchParams }: Props) {

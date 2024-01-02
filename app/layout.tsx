@@ -10,8 +10,16 @@ import { SiteFooter } from "@/components/site-footer"
 import { SiteHeader } from "@/components/site-header"
 
 export const metadata: Metadata = {
-  title: siteConfig.name,
-  description: siteConfig.description,
+  metadataBase: new URL ("https://www.mystore.com"),
+  title: {
+    default: "My Store",
+    template: `%s | My Store`
+  
+  },
+  description: "This is the description of my store", 
+  verification: {
+    google: "google-site-verification= googledafd61001b660688.html",
+  },
   icons: {
     icon: '/favicon.ico'
   }

@@ -1,5 +1,14 @@
 import { CartItems } from "@/components/cart-items"
 import { CartSummary } from "@/components/cart-summary"
+import { Metadata } from "next"
+
+
+export const metadata: Metadata = {
+  title: {
+    absolute: "Shopping Cart"
+  
+  },
+}
 
 export default function Page() {
   return (

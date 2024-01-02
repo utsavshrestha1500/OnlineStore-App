@@ -1,6 +1,10 @@
 {
   "compilerOptions": {
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -15,18 +19,30 @@
     "jsx": "preserve",
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./*"]
+      "@/*": [
+        "./*"
+      ]
     },
     "plugins": [
       {
         "name": "typescript-styled-plugin"
+      },
+      {
+        "name": "next"
       }
     ],
     "strictNullChecks": true,
     "target": "esnext",
-    "skipDefaultLibCheck": true, // Added this to skip type checking of declaration files in node_modules
-   
+    "skipDefaultLibCheck": true // Added this to skip type checking of declaration files in node_modules
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules", ".next"] // Excluding the .next folder from TypeScript checking
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    ".next"
+  ] // Excluding the .next folder from TypeScript checking
 }
