@@ -34,7 +34,7 @@
 ## Steps
 1. Clone the repository:
    ```bash
-   git clone <repository-url>
+   git clone <https://github.com/utsavshrestha1500/OnlineStore-App.git>
 
 
 2. Change into the project directory:
@@ -45,7 +45,7 @@
 3. Install dependencies:
 
   ```bash
- npm install
+  npm install
 
 4. Set up environment variables:
 Create a .env.local file in the root directory and add the necessary environment variables, such as Stripe API keys.
@@ -53,6 +53,6 @@ Create a .env.local file in the root directory and add the necessary environment
 5. Start the development server:
 
   ```bash
- npm run dev
+  npm run dev
 
 6. Open your browser and visit http://localhost:3000 to view the application.
